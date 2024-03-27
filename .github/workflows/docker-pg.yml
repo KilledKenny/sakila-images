@@ -42,5 +42,5 @@ jobs:
           context: pg_image
           file: ./pg_image/Dockerfile
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: killedkenny/sakila:postgres
           labels: ${{ steps.meta.outputs.labels }}
