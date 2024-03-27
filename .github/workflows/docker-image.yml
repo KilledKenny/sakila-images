@@ -44,3 +44,21 @@ jobs:
           push: true
           tags: killedkenny/sakila:postgres
           labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Build and push MariaDB Docker image
+        uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
+        with:
+          context: mariadb_image
+          file: ./mariadb_image/Dockerfile
+          push: true
+          tags: killedkenny/sakila:mariadb
+          labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Build and push MySQL Docker image
+        uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
+        with:
+          context: mysql_image
+          file: ./mysql_image/Dockerfile
+          push: true
+          tags: killedkenny/sakila:mysql
+          labels: ${{ steps.meta.outputs.labels }}
